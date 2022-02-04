@@ -18,7 +18,12 @@ app.use("/js" ,express.static(__dirname+ "/src/js"));
 
 const port = 80;
 
-async function createAssessment() {
+async function createAssessment({
+    projectID = "concise-rune-302709",
+    recaptchaSiteKey = "6Lf2-1ceAAAAAKFggSYLN1GWxB69n45zr5EXvI5i",
+    token = "action-token",
+    recaptchaAction = "login",
+  }) {
     const client = new RecaptchaEnterpriseServiceClient();
     const projectPath = client.projectPath(projectID);
     const request = ({
@@ -46,12 +51,7 @@ async function createAssessment() {
          }
   }
 
-let recaptchaScore = createAssessment({
-    projectID = "concise-rune-302709",
-    recaptchaSiteKey = "6Lf2-1ceAAAAAKFggSYLN1GWxB69n45zr5EXvI5i",
-    token = "action-token",
-    recaptchaAction = "login",
-  });
+let recaptchaScore = createAssessment(projectID = "concise-rune-302709");
 
 //Render Web Page
 app.get("/",(req,res)=>{
