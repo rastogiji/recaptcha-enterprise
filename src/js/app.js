@@ -3,6 +3,6 @@ const recaptchaScore = document.querySelector(".score-render")
 
 btn.addEventListener("click", (e) =>{
     e.preventDefault();
-    score.textContent = `The recaptcha score is ${score}`;
+    recaptchaScore.textContent = `The recaptcha score is ${score}`;
 })
 
