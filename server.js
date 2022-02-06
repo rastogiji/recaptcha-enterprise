@@ -51,7 +51,7 @@ async function createAssessment({
          }
   }
 
-let recaptchaScore = createAssessment(projectID = "concise-rune-302709");
+let recaptchaScore = createAssessment({});
 
 //Render Web Page
 app.get("/",(req,res)=>{
