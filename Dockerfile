@@ -5,7 +5,5 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-ENV PORT=80
-ENTRYPOINT export GOOGLE_APPLICATION_CREDENTIALS="/config/concise-rune-302709-8b1061d23b8a.json"
-EXPOSE 80
+EXPOSE 8080
 CMD [ "node", "server.js" ]
