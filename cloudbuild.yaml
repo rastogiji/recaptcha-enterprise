@@ -11,3 +11,5 @@ steps:
   args: ['run', 'deploy', 'recaptcha-demo', '--image', 'gcr.io/concise-rune-302709/recaptcha-demo:$COMMIT_SHA', '--region', 'us-central1', '--update-secrets', 'GOOGLE_APPLICATION_CREDENTIALS=recaptcha-client-sa-key:latest']
 images:
 - gcr.io/concise-rune-302709/recaptcha-demo:$COMMIT_SHA
+options:
+  logging: CLOUD_LOGGING_ONLY
