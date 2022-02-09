@@ -31,7 +31,7 @@ btn.addEventListener("click", (e) => {
 
     //---- step : 2 sending generated token to backend
 
-    let res = await fetch("http://recaptcha.learning-cloud.co.in:8080/interpret", options);
+    let res = await fetch("https://recaptcha.learning-cloud.co.in:8080/interpret", options);
 
     console.log(res);
     let resJson = await res.json();
