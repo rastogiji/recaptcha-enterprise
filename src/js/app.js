@@ -1,5 +1,5 @@
 const btn = document.querySelector("button");
-const recaptchaScore = document.querySelector(".score-render");
+const recaptchaScore = document.querySelector("#score-render");
 
 // There is 3 step to validate your user action with reCAPTCHA security
 // 1. generate token a token with help of site key
@@ -33,9 +33,8 @@ btn.addEventListener("click", (e) => {
 
     let res = await fetch("https://recaptcha.learning-cloud.co.in:8080/interpret", options);
 
-    console.log(res);
     let resJson = await res.json();
     console.log(resJson);
-    recaptchaScore.textContent = `The recaptcha score is ${resJson.score}`;
+    recaptchaScore.innerText = `The recaptcha score is ${resJson.score}`;
   });
 });
