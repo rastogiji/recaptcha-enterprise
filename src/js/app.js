@@ -20,7 +20,6 @@ btn.addEventListener("click", (e) => {
         action: "LOGIN",
       }
     );
-    console.log(token);
     let options = {
       method: "POST",
       headers: {
