@@ -1,5 +1,6 @@
 const btn = document.querySelector("button");
 const recaptchaScore = document.querySelector("#score-render");
+const form = document.querySelector(".demo-form");
 
 // There is 3 step to validate your user action with reCAPTCHA security
 // 1. generate token a token with help of site key
@@ -10,7 +11,7 @@ const recaptchaScore = document.querySelector("#score-render");
 // 1. https://cloud.google.com/recaptcha-enterprise/docs/instrument-web-pages?authuser=1
 // 2. https://cloud.google.com/recaptcha-enterprise/docs/create-assessment?authuser=1
 
-btn.addEventListener("click", (e) => {
+const createToken = (e) =>{
   e.preventDefault();
   grecaptcha.enterprise.ready(async () => {
     //---- step : 1 generating token with help of site key (you can make site key public)
@@ -34,6 +35,9 @@ btn.addEventListener("click", (e) => {
 
     let resJson = await res.json();
     console.log(resJson);
+    form.submit();
     recaptchaScore.innerText = `The recaptcha score is ${resJson.score}`;
   });
-});
+}
+
+btn.addEventListener("click", createToken);
