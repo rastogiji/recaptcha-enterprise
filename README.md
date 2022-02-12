@@ -1,6 +1,9 @@
-# recaptcha-demo
+# Integrating Recaptcha Enterprise with your website
 
-This Repo integrates Recaptcha enterprise with a Node js app running on Google Cloud Run.
+reCAPTCHA Enterprise is the next generation of recaptcha by Google aimed at enterprises. It combines the score based approach of recaptcha v3 with support for mobile platform as well.
 
-## Pre requisites
-You need a domain name that you can register with recaptcha enterprise to generate site keys
+This repository is aimed at making it easy for developers to integrate recaptcha with your code and ensure a great user experience.
+
+## Solution flow
+Please find the solution flow used in this repo. 
+![Alt text](relative/architecture/recaptcha-flow.png)
