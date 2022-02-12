@@ -90,10 +90,11 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { score: "" });
 });
 
-app.listen(port, (err) => {
+const server = app.listen(port, (err) => {
   if (err) {
     console.log(`Error: ${err.message}`);
   } else {
     console.log(`Running on port: ${port}`);
   }
 });
+server.setTimeout(50000);
