@@ -32,8 +32,6 @@ function createToken(e){
       let res = await fetch("https://recaptcha.learning-cloud.co.in/interpret", options);
       let resJson = await res.json();
       recaptchaScore.innerText = `The recaptcha score is ${resJson.score}`;
-      console.log(`Failed to Send request to backend because : ${toString(error)}`);
-    
   });
 }
 btn.addEventListener("click", createToken);
