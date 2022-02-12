@@ -8,7 +8,7 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'recaptcha-demo', '--image', 'gcr.io/concise-rune-302709/recaptcha-demo:$COMMIT_SHA', '--region', 'us-central1', '--update-secrets', 'GOOGLE_APPLICATION_CREDENTIALS=recaptcha-client-sa-key:latest']
+  args: ['run', 'deploy', 'recaptcha-demo', '--image', 'gcr.io/concise-rune-302709/recaptcha-demo:$COMMIT_SHA', '--region', 'us-central1']
 images:
 - gcr.io/concise-rune-302709/recaptcha-demo:$COMMIT_SHA
 options:

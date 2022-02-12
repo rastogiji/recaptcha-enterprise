@@ -1,6 +1,6 @@
 const btn = document.querySelector("button");
 const recaptchaScore = document.querySelector("#score-render");
-const form = document.querySelector(".demo-form");
+const form = document.querySelector("#demo-form");
 
 // There is 3 step to validate your user action with reCAPTCHA security
 // 1. generate token a token with help of site key
