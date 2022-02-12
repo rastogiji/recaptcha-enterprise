@@ -27,6 +27,7 @@ const createToken = (e) =>{
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ token, action: "LOGIN" }),
+      console.log(token)
     };
 
     //---- step : 2 sending generated token to backend
