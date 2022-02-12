@@ -31,7 +31,7 @@ const createToken = (e) =>{
 
     //---- step : 2 sending generated token to backend
 
-    let res = await fetch("https://recaptcha.learning-cloud.co.in:8080/interpret", options);
+    let res = await fetch("https://recaptcha.learning-cloud.co.in/interpret", options);
 
     let resJson = await res.json();
     console.log(resJson);
