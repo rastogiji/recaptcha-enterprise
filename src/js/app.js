@@ -11,9 +11,9 @@ const form = document.querySelector(".demo-form");
 // 1. https://cloud.google.com/recaptcha-enterprise/docs/instrument-web-pages?authuser=1
 // 2. https://cloud.google.com/recaptcha-enterprise/docs/create-assessment?authuser=1
 
-const createToken = (e) =>{
+function createToken(e){
   e.preventDefault();
-  grecaptcha.enterprise.ready(async () => {
+  grecaptcha.enterprise.ready(async function() {
     //---- step : 1 generating token with help of site key (you can make site key public)
     const token = await grecaptcha.enterprise.execute(
       "6Lf2-1ceAAAAAKFggSYLN1GWxB69n45zr5EXvI5i",
