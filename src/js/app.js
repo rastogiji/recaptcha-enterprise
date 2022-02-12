@@ -14,28 +14,34 @@ function createToken(e){
   e.preventDefault();
   grecaptcha.enterprise.ready(async function() {
     //---- step : 1 generating token with help of site key (you can make site key public)
-    const token = await grecaptcha.enterprise.execute(
-      "6Lf2-1ceAAAAAKFggSYLN1GWxB69n45zr5EXvI5i",
-      {
-        action: "LOGIN",
-      }
-    );
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ token, action: "LOGIN" })
-    };
-    console.log(token)
-
+    try {
+      const token = await grecaptcha.enterprise.execute(
+        "6Lf2-1ceAAAAAKFggSYLN1GWxB69n45zr5EXvI5i",
+        {
+          action: "LOGIN",
+        }
+      );
+      let options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token, action: "LOGIN" })
+      };
+    } catch (error) {
+      console.log(`Unable to generate token because: ${toString(error)}`);
+    }
+    
     //---- step : 2 sending generated token to backend
 
-    let res = await fetch("https://recaptcha.learning-cloud.co.in/interpret", options);
-
-    let resJson = await res.json();
-    console.log(resJson);
-    recaptchaScore.innerText = `The recaptcha score is ${resJson.score}`;
+    try {
+      let res = await fetch("https://recaptcha.learning-cloud.co.in/interpret", options);
+      let resJson = await res.json();
+      recaptchaScore.innerText = `The recaptcha score is ${resJson.score}`;
+    } catch (error) {
+      console.log(`Failed to Send request to backend because : ${toString(error)}`);
+    }
+    
   });
 }
 

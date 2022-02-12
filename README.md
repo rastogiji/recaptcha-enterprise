@@ -1,4 +1,4 @@
-# recaptcha-demo(WIP)
+# recaptcha-demo
 
 This Repo integrates Recaptcha enterprise with a Node js app running on Google Cloud Run.
 
