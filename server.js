@@ -81,7 +81,7 @@ app.post("/interpret", async (req, res) => {
   if (recaptchaScore != null) {
     res.json({ score: recaptchaScore });
   } else {
-    res.send("Not able to fetch score.");
+    res.json({ score: "Not able to fetch score."} );
   }
 });
 
