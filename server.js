@@ -1,3 +1,4 @@
+// Importing Required Libraries
 const express = require("express");
 const path = require("path");
 const process = require("process");
@@ -5,11 +6,13 @@ const {
   RecaptchaEnterpriseServiceClient,
 } = require("@google-cloud/recaptcha-enterprise");
 
+// Handling Command Line Interruptions
 process.on("SIGINT", () => {
   console.info("Interrupted");
   process.exit(0);
 });
 
+// Initialising express server
 app = express();
 
 app.set("view engine", "ejs");
