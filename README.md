@@ -20,4 +20,4 @@ We use Cloud Build to build our container images and deploy them to Cloud Run.
   2. Cloud Run (Default compute Engine Service Account) : reCAPTCHA Enterprise Agent.
  
  ## Setup
- Refer to this blog (here)[https://blog.searce.com/integrating-recaptcha-enterprise-with-your-node-js-application-5e1a1f468ca1] on how to use this
+ Refer to this blog [here](https://blog.searce.com/integrating-recaptcha-enterprise-with-your-node-js-application-5e1a1f468ca1) on how to use this
