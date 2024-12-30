@@ -19,15 +19,12 @@ jobs:
         - name: Setup Docker
           if: runner.os == 'macos'
           run: |
-            HOMEBREW_NO_AUTO_UPDATE=1 brew install --cask docker
-            sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
-            open -a /Applications/Docker.app --args --unattended --accept-license
-            echo "We are waiting for Docker to be up and running. It can take over 2 minutes..."
-            while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done 
+            brew install docker
+            colima start
         - name: Build Docker Image
           run: docker build -t mockai:test .
         - name: Run Docker Container
-          run: docker run -dp 5002:5002 mockai:test --name mockai-container 
+          run: docker run --name mockai-container -dp 5002:5002 mockai:test 
         - name: Check if Container is Running
           run: docker ps | grep mockai-container
         - name: Test Server Response
