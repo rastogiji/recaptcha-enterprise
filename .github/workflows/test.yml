@@ -28,7 +28,7 @@ jobs:
                   context: .
                   push: false
                   tags: rastogiji54/mockai:${{ steps.get_tag.outputs.PACKAGE_VERSION }}
-                  platforms: linux/amd64,linux/arm64
+                  platforms: linux/amd64
             - name: Validate
               run: |
                 docker images
