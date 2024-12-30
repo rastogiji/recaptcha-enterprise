@@ -17,11 +17,12 @@ jobs:
         - name: Checkout Repository 
           uses: actions/checkout@v4
         - name: Setup Docker
-          uses: docker/build-push-action@v6
-          with:
-            push: false
-            tags: mockai:test
-            context: .
+          if: runner.os == 'macos'
+          run: |
+            brew install docker
+            colima start 
+        - name: Build Docker Image
+          run: docker build -t mockai:test .
         - name: Run Docker Container
           run: docker run -dp 5002:5002 mockai:test --name mockai-container 
         - name: Check if Container is Running
